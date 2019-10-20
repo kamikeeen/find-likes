@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: find_likes_production
-  username: find_likes
-  password: <%= ENV['FIND_LIKES_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= Rails.application.credentials.database_password %>
+  socket: /var/lib/mysql/mysql.sock
