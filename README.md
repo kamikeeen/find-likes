@@ -1,24 +1,55 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# DB設計
 
-Things you may want to cover:
+## ER図
+[![Image from Gyazo](https://i.gyazo.com/1469cb359e7361805f73e2742b1001c3.png)](https://gyazo.com/1469cb359e7361805f73e2742b1001c3)
 
-* Ruby version
+## Usersテーブル
 
-* System dependencies
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+|image|string|null: false|
 
-* Configuration
+### Association
+- has_many :likes, through: :user_likes
+- has_many :user_likes
+- has_many :relationships
+- has_many :followings, through: :relationships, source: :follow
+- has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id'
+- has_many :followers, through: :reverse_of_relationships, source: :user
 
-* Database creation
+## Relationshipsテーブル
 
-* Database initialization
+|Column|Type|Options|
+|------|----|-------|
+|user_id|reference|null: false, foreign_key: true|
+|follow_id|reference|null: false, foreign_key: true|
 
-* How to run the test suite
+### Association
+- belongs_to :user
+- belongs_to :follow, class_name: "User"
 
-* Services (job queues, cache servers, search engines, etc.)
+## Likesテーブル
 
-* Deployment instructions
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|ancestry|string||
 
-* ...
+### Association
+- has_many :user_likes
+- has_many :users, through: :user_likes
+
+## User_likesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|reference|null: false, foreign_key: true|
+|like_id|reference|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :like
