@@ -5,7 +5,7 @@ set :application, "find-likes"
 set :repo_url, "https://github.com/kamikeeen/find-likes.git"
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp}.call
 
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads', "config/master.key")
 
 set :rbenv_type, :user
 set :rbenv_ruby, '2.5.1'
