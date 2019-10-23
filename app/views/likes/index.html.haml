@@ -1,4 +1,5 @@
-.name
-  = current_user.nickname
-= image_tag "#{current_user.avatar}"
-= link_to "ログアウト", destroy_user_session_path, method: :delete
+.top-page
+  .top-page__title
+    あなたの「好き」を見つけましょう
+  = link_to "「好きを」登録する", "#", class:"top-page__btn"
+
