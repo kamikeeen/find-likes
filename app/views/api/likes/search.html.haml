@@ -1,0 +1,13 @@
+.search-results
+  - unless @likes.empty?
+    - @likes.each do |like|
+      .result
+        = "#{@likes.length}件見つかりました"
+        .resurt__detail
+          = "#{like.name}(#{like.genre.name})"
+  - else
+    .result
+      .result__none
+        まだ登録されていません
+      .result__create-btn
+        新しく登録しましょう!

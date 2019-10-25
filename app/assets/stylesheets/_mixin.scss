@@ -1,10 +1,10 @@
 @mixin fadein{
-  animation: fadeinanim;
+  animation: fade_in_anim;
   animation-duration: 3s;
 }
 
 
-@keyframes fadeinanim {
+@keyframes fade_in_anim {
   from {
     opacity: 0;
     transform: translateY(-40px);
@@ -13,4 +13,9 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@mixin select_active{
+  outline: none;
+  border: 1px solid rgb(249, 113, 253);
 }

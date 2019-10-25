@@ -11,14 +11,14 @@
     line-height: 30px;
     width: 150px;
     border-radius: 4px;
-    @include fadein;
-    animation-delay: 3s;
-    animation-fill-mode: backwards;
     text-decoration: none;
     background-color: rgb(219, 76, 207);
     color: white;
     margin: 20px 0 0 150px;
     box-shadow: 3px 3px 3px gray;
+    @include fadein;
+    animation-delay: 3s;
+    animation-fill-mode: backwards;
     &:active{
       box-shadow: none;
       transform: translate3d(2px, 2px, 2px);
