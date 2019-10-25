@@ -1,10 +1,11 @@
 .search-results
   - unless @likes.empty?
-    - @likes.each do |like|
-      .result
-        = "#{@likes.length}件見つかりました"
-        .resurt__detail
-          = "#{like.name}(#{like.genre.name})"
+    .result
+      = "#{@likes.length}件見つかりました"
+      %br
+      - @likes.each do |like|
+        = link_to "#{like.name}(#{like.genre.name})", like_path(like.id), class: "resurt__detail"
+        %br
   - else
     .result
       .result__none

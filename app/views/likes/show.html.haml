@@ -1,0 +1,8 @@
+= @like.name
+- if current_user.likes.ids.include?(@like.id)
+  = link_to "好きから外す", add_like_path(params[:id])
+- else
+  = link_to "好きに追加する", add_like_path(params[:id])
+- @like.users.each do |user|
+  -if user.id != current_user.id
+    = link_to "#{user.nickname}", user_path(user)

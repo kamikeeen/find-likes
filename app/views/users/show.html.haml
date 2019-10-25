@@ -1,0 +1,4 @@
+= "#{@user.nickname}のページ"
+- @user.likes.each do |like|
+  %br
+  = link_to "#{like.name}", like_path(like)

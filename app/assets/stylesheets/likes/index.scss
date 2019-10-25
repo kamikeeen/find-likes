@@ -1,3 +1,11 @@
+.top-logo{
+  text-decoration: none;
+  display: block;
+  width: 140px;
+  margin: 30px auto 0;
+  font-size: 30px;
+  color: rgb(249, 113, 253);
+}
 .top-page{
   &__title{
     @include fadein;
