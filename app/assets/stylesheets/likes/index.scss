@@ -1,0 +1,35 @@
+.top-logo{
+  text-decoration: none;
+  display: block;
+  width: 140px;
+  margin: 30px auto 0;
+  font-size: 30px;
+  color: rgb(249, 113, 253);
+}
+.top-page{
+  &__title{
+    @include fadein;
+    margin: 300px 0 0 100px;
+    font-size: 24px;
+    color: rgb(249, 113, 253);
+  }
+  &__btn{
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    width: 150px;
+    border-radius: 4px;
+    text-decoration: none;
+    background-color: rgb(219, 76, 207);
+    color: white;
+    margin: 20px 0 0 150px;
+    box-shadow: 3px 3px 3px gray;
+    @include fadein;
+    animation-delay: 3s;
+    animation-fill-mode: backwards;
+    &:active{
+      box-shadow: none;
+      transform: translate3d(2px, 2px, 2px);
+    }
+  }
+}

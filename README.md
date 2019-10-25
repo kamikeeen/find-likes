@@ -2,7 +2,7 @@
 # DB設計
 
 ## ER図
-[![Image from Gyazo](https://i.gyazo.com/1469cb359e7361805f73e2742b1001c3.png)](https://gyazo.com/1469cb359e7361805f73e2742b1001c3)
+[![Image from Gyazo](https://i.gyazo.com/3d4a077a268e8297ff182c8fbf29a580.png)](https://gyazo.com/3d4a077a268e8297ff182c8fbf29a580)
 
 ## Usersテーブル
 
@@ -38,10 +38,12 @@
 |------|----|-------|
 |name|string|null: false|
 |ancestry|string||
+|genre_id|integer|null: false|
 
 ### Association
 - has_many :user_likes
 - has_many :users, through: :user_likes
+- belongs_to :genre
 
 ## User_likesテーブル
 
