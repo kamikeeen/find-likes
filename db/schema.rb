@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_23_064123) do
+ActiveRecord::Schema.define(version: 2019_10_26_024112) do
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,17 @@ ActiveRecord::Schema.define(version: 2019_10_23_064123) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "genre_id", null: false
+    t.index ["name", "genre_id"], name: "index_likes_on_name_and_genre_id", unique: true
+  end
+
+  create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "follows_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["follows_id"], name: "index_relationships_on_follows_id"
+    t.index ["user_id", "follows_id"], name: "index_relationships_on_user_id_and_follows_id", unique: true
+    t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 
   create_table "user_likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
@@ -26,6 +37,7 @@ ActiveRecord::Schema.define(version: 2019_10_23_064123) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["like_id"], name: "index_user_likes_on_like_id"
+    t.index ["user_id", "like_id"], name: "index_user_likes_on_user_id_and_like_id", unique: true
     t.index ["user_id"], name: "index_user_likes_on_user_id"
   end
 
@@ -43,6 +55,8 @@ ActiveRecord::Schema.define(version: 2019_10_23_064123) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "relationships", "users"
+  add_foreign_key "relationships", "users", column: "follows_id"
   add_foreign_key "user_likes", "likes"
   add_foreign_key "user_likes", "users"
 end
