@@ -1,4 +1,28 @@
-= "#{@user.nickname}のページ"
-- @user.likes.each do |like|
-  %br
-  = link_to "#{like.name}", like_path(like)
+= render "shared/header"
+.user
+  .user__info
+    = "#{@user.nickname}さんのマイページ"
+  .user__content
+    .user__content__relationships
+      = render "shared/follow_btn", user: @user
+      .followings
+        = "フォロー(#{@user.followings.length}人)"
+      - @user.followings.each do |following|
+        = link_to user_path(following.id), class: "followings__user" do
+          = image_tag "#{following.avatar}", class: "followings__user__avatar"
+          .followings__user__name
+            = following.nickname
+      .followers
+        = "フォローワー(#{@user.followers.length}人)"
+      - @user.followers.each do |follower|
+        = link_to user_path(follower.id), class: "followers__user" do
+          = image_tag "#{follower.avatar}", class: "followings__user__avatar"
+          .followings__user__name
+            = follower.nickname
+
+    .user__likes
+    - @user.likes.each do |like|
+      .user__likes__like
+        = link_to "#{like.name}", like_path(like)
+
+

@@ -1,3 +1,4 @@
+= render "shared/header"
 = @like.name
 - if current_user.likes.ids.include?(@like.id)
   = link_to "好きから外す", add_like_path(params[:id])

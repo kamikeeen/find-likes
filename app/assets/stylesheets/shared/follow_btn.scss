@@ -1,0 +1,21 @@
+.follow-btn{
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  width: 100px;
+  border-radius: 4px;
+  text-decoration: none;
+  background-color: rgb(219, 76, 207);
+  border: 1px solid rgb(219, 76, 207);
+  color: white;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 2px gray;
+  outline: none;
+  &:active{
+    transform: translate3d(1px, 1px, 1px);
+  }
+}
+.yet{
+  background-color: gray;
+  border: 1px solid gray;
+}

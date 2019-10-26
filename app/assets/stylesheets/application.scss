@@ -1,4 +1,7 @@
 @import "reset";
 @import "mixin";
+@import "shared/header";
+@import "shared/follow_btn";
 @import "likes/index";
-@import "likes/new"
+@import "likes/new";
+@import "users/show"
