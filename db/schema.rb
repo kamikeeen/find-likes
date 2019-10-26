@@ -23,11 +23,11 @@ ActiveRecord::Schema.define(version: 2019_10_26_024112) do
 
   create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "follows_id", null: false
+    t.bigint "follow_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["follows_id"], name: "index_relationships_on_follows_id"
-    t.index ["user_id", "follows_id"], name: "index_relationships_on_user_id_and_follows_id", unique: true
+    t.index ["follow_id"], name: "index_relationships_on_follow_id"
+    t.index ["user_id", "follow_id"], name: "index_relationships_on_user_id_and_follow_id", unique: true
     t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2019_10_26_024112) do
   end
 
   add_foreign_key "relationships", "users"
-  add_foreign_key "relationships", "users", column: "follows_id"
+  add_foreign_key "relationships", "users", column: "follow_id"
   add_foreign_key "user_likes", "likes"
   add_foreign_key "user_likes", "users"
 end

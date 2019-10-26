@@ -2,3 +2,11 @@
 - @user.likes.each do |like|
   %br
   = link_to "#{like.name}", like_path(like)
+  
+= render "shared/follow_btn", user: @user
+
+- @user.followings.each do |following|
+  = link_to "#{following.nickname}", user_path(following.id)
+
+- @user.followers.each do |follower|
+  = link_to "#{follower.nickname}", user_path(follower.id)
