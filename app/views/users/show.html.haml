@@ -27,7 +27,7 @@
                     = follower.nickname
       .user__content__likes
         .like__title
-          = "#{@user.nickname}さんの好きなこと"
+          = "#{@user.nickname}さんの好きなこと(共通: #{@count}個)"
         .like__index
           - @user.likes.each do |like|
             .like{ class: "#{'yet' unless current_user.likes.include?(like)}"}
