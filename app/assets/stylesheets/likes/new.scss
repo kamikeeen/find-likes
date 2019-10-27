@@ -19,6 +19,27 @@
         }
       }
     }
+    .result{
+      &__title{
+      }
+      &__likes{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px 0;
+        .like{
+          padding: 0 10px;
+          background-color: rgba(219, 76, 207, 0.562);
+          height: 30px;
+          margin: 0 20px 10px 0;
+          border-radius: 4px;
+          box-shadow: 2px 2px 2px gray;
+          color: black;
+          line-height: 30px;
+          text-decoration: none;
+
+        }
+      }
+    }
     &__detail{
       margin-bottom: 20px;
       label{
