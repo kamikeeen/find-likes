@@ -9,7 +9,7 @@ $(function(){
                         <option value="4">漫画</option>
                         <option value="5">その他</option></select>
                     </div>
-                    <input type="submit" name="commit" value="好きを作成！" class="create-btn" data-disable-with="好きを作成！">`
+                    <input type="submit" name="commit" value="好きを作成!" class="create-btn" data-disable-with="好きを作成!">`
 
   $("#search__like__box").on("keyup", function(){
     let keyword = $(this).val() 
