@@ -70,5 +70,6 @@ gem "pry-rails"
 gem 'jquery-rails'
 gem "devise"
 gem 'active_hash'
+gem "faker"
 
 
