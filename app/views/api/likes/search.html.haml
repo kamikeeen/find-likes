@@ -1,14 +1,12 @@
-.search-results
+.result
   - unless @likes.empty?
-    .result
+    .result__title
       = "#{@likes.length}件見つかりました"
-      %br
+    .result__likes
       - @likes.each do |like|
-        = link_to "#{like.name}(#{like.genre.name})", like_path(like.id), class: "resurt__detail"
-        %br
+        = link_to "#{like.name}(#{like.genre.name})", like_path(like.id), class: "#{(current_user.likes.include?(like)) ? 'like' : 'like yet'}"
   - else
-    .result
-      .result__none
-        まだ登録されていません
-      .result__create-btn
-        新しく登録しましょう!
+    .result__title
+      まだ登録されていません
+    .result__create-btn
+      新しく登録!

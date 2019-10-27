@@ -3,4 +3,7 @@ class Api::LikesController < ApplicationController
   def search
     @likes = Like.where("name LIKE(?)", "%#{params[:keyword]}%")
   end
+
+  def select_genre
+  end
 end

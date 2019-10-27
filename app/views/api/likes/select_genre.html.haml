@@ -1,0 +1,9 @@
+.like-form__detail
+  %label{name:"like_genre_id"}
+    ジャンルを選択してください
+  %br
+  %select{name: "like[genre_id]", id:"like_genre_id"}
+    %option{value: ""} ---
+    - Genre.all.each do |genre|
+      %option{value: "#{genre.id}"}=genre.name
+%input{type: "submit", name: "commit", value: "好きを作成!", class: "create-btn"}

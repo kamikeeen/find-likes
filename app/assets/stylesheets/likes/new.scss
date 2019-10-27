@@ -19,6 +19,49 @@
         }
       }
     }
+    .result{
+      &__title{
+        font-size: 14px;
+        margin-top: 10px;
+      }
+      &__create-btn{
+        font-size: 16px;
+        height: 30px;
+        line-height: 30px;
+        width: 100px;
+        border-radius: 4px;
+        text-decoration: none;
+        background-color: rgb(219, 76, 207);
+        color: white;
+        box-shadow: 2px 2px 2px gray;
+        text-align: center;
+        margin-bottom: 20px;
+        &:active{
+          box-shadow: none;
+          transform: translate3d(1px, 1px, 1px);
+        }
+      
+      }
+      &__likes{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px 0;
+        max-height: calc(100vh - 270px);
+        overflow: scroll;
+        .like{
+          padding: 0 10px;
+          background-color: rgba(219, 76, 207, 0.562);
+          height: 30px;
+          margin: 0 20px 10px 0;
+          border-radius: 4px;
+          box-shadow: 2px 2px 2px gray;
+          color: black;
+          line-height: 30px;
+          text-decoration: none;
+
+        }
+      }
+    }
     &__detail{
       margin-bottom: 20px;
       label{
@@ -48,7 +91,7 @@
     .create-btn{
       height: 30px;
       line-height: 30px;
-      width: 150px;
+      width: 100px;
       border-radius: 4px;
       background-color: rgb(219, 76, 207);
       border: 1px solid rgb(219, 76, 207);

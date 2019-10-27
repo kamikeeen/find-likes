@@ -14,5 +14,6 @@ Rails.application.routes.draw do
 
   namespace :api do
     get "likes/search"
+    get "likes/select_genre"
   end
 end
