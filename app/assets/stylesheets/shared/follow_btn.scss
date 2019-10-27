@@ -7,16 +7,20 @@
   border-radius: 4px;
   text-decoration: none;
   background-color: rgb(219, 76, 207);
-  border: 1px solid rgb(219, 76, 207);
+  border-style: none;
   color: white;
   margin: 5px 0 0 20px;
   box-shadow: 2px 2px 2px gray;
   outline: none;
   &:active{
+    box-shadow: none;
     transform: translate3d(1px, 1px, 1px);
   }
 }
 .yet{
-  background-color: gray;
-  border: 1px solid gray;
+  background-color: rgba(128, 128, 128, 0.233) !important;
+  color: black ;
+  a{
+    color: black !important;
+  }
 }

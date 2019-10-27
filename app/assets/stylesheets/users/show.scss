@@ -26,13 +26,14 @@
               border-radius: 20px;
               margin-bottom: 5px;
               box-shadow: 2px 2px 2px gray;
+              &:active{
+                box-shadow: none;
+                transform: translate3d(1px, 1px, 1px);
+              }
               .link{
                 display: flex;
                 outline: none;
                 text-decoration: none;
-                &:active{
-                  transform: translate3d(1px, 1px, 1px);
-                }
                 &__avatar{
                   height: 30px;
                   width: 30px;
@@ -58,11 +59,12 @@
           }
           &__index{
             display: flex;
+            flex-wrap: wrap;
             .like{
               padding: 0 10px;
-              background-color: rgba(128, 128, 128, 0.219);
+              background-color: rgba(219, 76, 207, 0.562);
               height: 30px;
-              margin-right: 20px;
+              margin: 0 20px 10px 0;
               border-radius: 4px;
               box-shadow: 2px 2px 2px gray;
               &:active{

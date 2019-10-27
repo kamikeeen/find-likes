@@ -20,17 +20,17 @@
             = "フォローワー  (#{@user.followers.length})"
           .followers__users
             - @user.followers.each do |follower|
-              .followers__users__user
+              .followers__users__user{ class: "#{'yet' unless current_user.followings.include?(follower)}"}
                 = link_to user_path(follower.id), class: "link" do
                   = image_tag "#{follower.avatar}", class: "link__avatar"
                   .link__name
                     = follower.nickname
       .user__content__likes
         .like__title
-          = "#{@user.nickname}さんの好きなこと"
+          = "#{@user.nickname}さんの好きなこと(共通: #{@count}個)"
         .like__index
           - @user.likes.each do |like|
-            .like
+            .like{ class: "#{'yet' unless current_user.likes.include?(like)}"}
               = link_to "#{like.name}", like_path(like), class: "like__name"
 
 
