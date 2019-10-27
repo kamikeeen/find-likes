@@ -10,7 +10,7 @@
             = "フォロー  (#{@user.followings.length})"
           .followings__users
             - @user.followings.each do |following|
-              .followings__users__user
+              .followings__users__user{ class: "#{'yet' unless current_user.followings.include?(following)}"}
                 = link_to user_path(following.id), class: "link" do
                   = image_tag "#{following.avatar}", class: "link__avatar"
                   .link__name
