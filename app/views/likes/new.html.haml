@@ -1,18 +1,18 @@
-= render "shared/header"
-= form_with model: @like, class: "like-form" do |f|
-  .search__like
-    %label{for: "search__like__box"}
-      好きなものを検索してみましょう
-    %br
-    %input#search__like__box{placeholder: "映画・漫画のタイトルなど"}
-  .like-form__detail
-    = f.label :genre_id, "ジャンルを選択してください"
-    %br
-    = f.collection_select :genre_id, Genre.all, :id, :name, {include_blank: "---"}
-  .like-form__detail
-    = f.label :name, "あなたの好きなものを登録しましょう", class: "label"
-    %br
-    = f.text_field :name, class: "name"
-  =f.submit "好きを作成！", class: "create-btn"
+.like-new
+  = form_with model: @like, class: "like-form" do |f|
+    .search__like
+      %label{for: "search__like__box"}
+        好きなものを検索してみましょう
+      %br
+      %input#search__like__box{placeholder: "映画・漫画のタイトルなど"}
+    .like-form__detail
+      = f.label :genre_id, "ジャンルを選択してください"
+      %br
+      = f.collection_select :genre_id, Genre.all, :id, :name, {include_blank: "---"}
+    .like-form__detail
+      = f.label :name, "あなたの好きなものを登録しましょう", class: "label"
+      %br
+      = f.text_field :name, class: "name"
+    =f.submit "好きを作成！", class: "create-btn"
 
 = javascript_pack_tag "like_new"
