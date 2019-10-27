@@ -1,62 +1,64 @@
-.like-form{
-  width: 60%;
-  margin: 50px auto 0;
-  .search__like{
-    label{
-      color: rgb(249, 113, 253);
-      font-size: 24px;
-    }
-    input{
-      width: 300px;
-      height: 40px;
-      border-radius: 4px;
-      border: 1px solid gray;
-      margin-top: 10px;
-      padding: 0 20px;
-      &:focus{
-        @include select_active;
+.like-new{
+  .like-form{
+    width: 60%;
+    margin: 50px auto 0;
+    .search__like{
+      label{
+        color: rgb(249, 113, 253);
+        font-size: 24px;
+      }
+      input{
+        width: 300px;
+        height: 40px;
+        border-radius: 4px;
+        border: 1px solid gray;
+        margin-top: 10px;
+        padding: 0 20px;
+        &:focus{
+          @include select_active;
+        }
       }
     }
-  }
-  &__detail{
-    margin-bottom: 20px;
-    label{
-      color: rgb(249, 113, 253);
-      font-size: 24px;
+    &__detail{
+      margin-bottom: 20px;
+      label{
+        color: rgb(249, 113, 253);
+        font-size: 24px;
+      }
+      select{
+        margin-top: 10px;
+        width: 100px;
+        height: 30px;
+        &:focus{
+          @include select_active;
+        }
+      }
+      input{
+        width: 300px;
+        height: 40px;
+        border-radius: 4px;
+        border: 1px solid gray;
+        margin-top: 10px;
+        padding: 0 20px;
+        &:focus{
+          @include select_active;
+        }
+      }
     }
-    select{
-      margin-top: 10px;
-      width: 100px;
+    .create-btn{
       height: 30px;
-      &:focus{
-        @include select_active;
-      }
-    }
-    input{
-      width: 300px;
-      height: 40px;
+      line-height: 30px;
+      width: 150px;
       border-radius: 4px;
-      border: 1px solid gray;
-      margin-top: 10px;
-      padding: 0 20px;
-      &:focus{
-        @include select_active;
+      background-color: rgb(219, 76, 207);
+      border: 1px solid rgb(219, 76, 207);
+      color: white;
+      box-shadow: 3px 3px 3px gray;
+      &:active{
+        outline: none;
+        box-shadow: none;
+        transform: translate3d(2px, 2px, 2px);
       }
-    }
-  }
-  .create-btn{
-    height: 30px;
-    line-height: 30px;
-    width: 150px;
-    border-radius: 4px;
-    background-color: rgb(219, 76, 207);
-    border: 1px solid rgb(219, 76, 207);
-    color: white;
-    box-shadow: 3px 3px 3px gray;
-    &:active{
-      outline: none;
-      box-shadow: none;
-      transform: translate3d(2px, 2px, 2px);
     }
   }
 }

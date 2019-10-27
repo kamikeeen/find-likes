@@ -1,9 +1,25 @@
-= render "shared/header"
-= @like.name
-- if current_user.likes.ids.include?(@like.id)
-  = link_to "好きから外す", add_like_path(params[:id])
-- else
-  = link_to "好きに追加する", add_like_path(params[:id])
-- @like.users.each do |user|
-  -if user.id != current_user.id
-    = link_to "#{user.nickname}", user_path(user)
+.likes-show
+  .like
+    .like__info
+      .like__info__name
+        = "「#{@like.name}」"
+      .like__info__genre
+        = "ジャンル: #{@like.genre.name}"
+    .like__follow
+      .like__follow__btn
+        - if current_user.likes.ids.include?(@like.id)
+          = link_to "好きから外す", add_like_path(params[:id])
+        - else
+          = link_to "好きに追加する", add_like_path(params[:id])
+      .like__follow__num
+        = "登録ユーザー: #{@like.users.length}人"
+  .followers
+    .followes__index
+      登録ユーザー
+    .followers__users
+      - @like.users.each do |user|
+        .followers__users__user
+          = link_to user_path(user.id), class: "link" do
+            = image_tag "#{user.avatar}", class: "link__avatar"
+            .link__name
+              = user.nickname

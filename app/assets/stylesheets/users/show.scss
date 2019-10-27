@@ -1,76 +1,79 @@
-.user{
-  margin: 40px 30px;
-  &__info{
-    margin-bottom: 20px;
-    font-size: 30px;
-    display: flex;
-  }
-  &__content{
-    display: flex;
-    padding: 20px;
-    &__relationships{
-      width: 250px;
-      .followings, .followers{
-        margin-bottom: 10px;
-        width: 200px;
-        &__title{
-        }
-        &__users{
-          padding: 10px 10px 0 0;
-          max-height: 200px;
-          overflow: scroll;
-          &__user{
-            background-color: rgba(219, 76, 207, 0.562);
-            border-radius: 20px;
-            margin-bottom: 5px;
-            box-shadow: 2px 2px 2px gray;
-            .link{
-              display: flex;
-              outline: none;
-              text-decoration: none;
-              &:active{
-                transform: translate3d(1px, 1px, 1px);
-              }
-              &__avatar{
-                height: 30px;
-                width: 30px;
-                margin-right: 15px;
-                border-radius: 15px;
-              }
-              &__name{
-                line-height: 30px;
-                color: rgba(0, 0, 0, 0.692);
+.user-show{
+  .user{
+    margin: 40px 30px;
+    &__info{
+      margin-bottom: 20px;
+      font-size: 30px;
+      display: flex;
+    }
+    &__content{
+      display: flex;
+      padding: 20px;
+      &__relationships{
+        width: 250px;
+        .followings, .followers{
+          margin-bottom: 10px;
+          width: 200px;
+          &__title{
+            border-bottom: 1px solid gray;
+          }
+          &__users{
+            padding: 10px 10px 0 0;
+            max-height: 200px;
+            overflow: scroll;
+            &__user{
+              background-color: rgba(219, 76, 207, 0.562);
+              border-radius: 20px;
+              margin-bottom: 5px;
+              box-shadow: 2px 2px 2px gray;
+              .link{
+                display: flex;
+                outline: none;
+                text-decoration: none;
+                &:active{
+                  transform: translate3d(1px, 1px, 1px);
+                }
+                &__avatar{
+                  height: 30px;
+                  width: 30px;
+                  margin-right: 15px;
+                  border-radius: 15px;
+                }
+                &__name{
+                  line-height: 30px;
+                  color: rgba(0, 0, 0, 0.692);
+                }
               }
             }
           }
         }
       }
-    }
-    &__likes{
-      width: calc(100vw - 650px);
-      margin: 0 300px 0 200px;
-      .like{
-        &__title{
-          font-size: 16px;
-          margin-bottom: 10px;
-        }
-        &__index{
-          display: flex;
-          .like{
-            padding: 0 10px;
-            background-color: rgba(128, 128, 128, 0.219);
-            height: 30px;
-            margin-right: 20px;
-            border-radius: 4px;
-            box-shadow: 2px 2px 2px gray;
-            &:active{
-              transform: translate3d(1px, 1px, 1px);
-              box-shadow: none;
-            }
-            &__name{
-              color: black;
-              line-height: 30px;
-              text-decoration: none;
+      &__likes{
+        width: calc(100vw - 650px);
+        margin: 0 300px 0 200px;
+        .like{
+          &__title{
+            font-size: 16px;
+            margin-bottom: 10px;
+          }
+          &__index{
+            display: flex;
+            .like{
+              padding: 0 10px;
+              background-color: rgba(128, 128, 128, 0.219);
+              height: 30px;
+              margin-right: 20px;
+              border-radius: 4px;
+              box-shadow: 2px 2px 2px gray;
+              &:active{
+                transform: translate3d(1px, 1px, 1px);
+                box-shadow: none;
+              }
+              &__name{
+                color: black;
+                line-height: 30px;
+                text-decoration: none;
+              }
             }
           }
         }
