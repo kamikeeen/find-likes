@@ -13,5 +13,5 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory  = 'likesearch'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/likesearch'
+  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/likesearch' if Rails.env == 'production'
 end

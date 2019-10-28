@@ -1,17 +1,53 @@
 
-# Name
+# アプリケーション
 Find-Likes
 
-# Description
-It is possible to find their new favorite.
-(まだ知らないあなたの好きなことを見つけることができます。)
+# 概要
+まだ知らないあなたの好きが見つかります！
 
-First, users register their favorite things.
-Then, find a user with a common point.
-What you like in common and what you don't register is likely to be your favorite
+ユーザーは自分の好きなもの「like」を登録することができます。
+自分の「like」と同じものを登録しているユーザーは思考が似ていると言えます。
+共通「like」が多いユーザーの「like」の中にまだ知らないだけの、あなた好みのものがあるはずです！
 
-(ユーザーは自分の好きなことを登録します。すると、好きなことが同じユーザーが見つかります。
-共通項が多いユーザーが登録している好きなことで、自分がまだ登録していないことは、あなたの好きなことになる可能性が高いものです。)
+# Demo
+
+## トップページ
+[![Image from Gyazo](https://i.gyazo.com/898a1e9ac6eea21696713c68fd6f18ba.png)](https://gyazo.com/898a1e9ac6eea21696713c68fd6f18ba)
+
+## ユーザーページ
+[![Image from Gyazo](https://i.gyazo.com/d5d6aadfe7620cc93b4bfc8c4727325d.png)](https://gyazo.com/d5d6aadfe7620cc93b4bfc8c4727325d)
+
+## like詳細ページ
+[![Image from Gyazo](https://i.gyazo.com/9bcbc39c73512f588d8945a0f84a5076.png)](https://gyazo.com/9bcbc39c73512f588d8945a0f84a5076)
+
+## like作成ページ
+[![Image from Gyazo](https://i.gyazo.com/5e528c821ac505cf7bfd1b6c751bf56c.gif)](https://gyazo.com/5e528c821ac505cf7bfd1b6c751bf56c)v
+
+# なぜ作ったのか？
+世の中には素晴らしいものがたくさん生まれてきます。
+それらの中から、私たちが出会えるものはいくつあるでしょうか？
+
+何か面白い漫画や映画ないかな？
+新しいアーティストを発掘したいな。
+ふとこんなことを思うことはありませんか？
+
+私は今までたくさんそういう場面がありました。
+どうやって探したらいいんだろうとか、もっと早くこれを知りたっかったな！などなど
+
+せっかく素晴らしいものが生まれてきているのなら、出会わなければもったいない！そんな思いからこのアプリケーションを作ることに決めました。
+
+# 苦労した点
+- rails6でのデプロイに苦労しました。rails5での開発・デプロイの経験はあったのですが、ローカル・本番での環境構築やmysqlの設定等の仕様が変わっていたため、苦労しました。
+- ユーザーが自分のlikeを登録する時に、すでに誰かによって作成されているものは追加になりかつ、誰も登録していなければ新規に作成という分岐をどうするかで悩みました。
+- ユーザー一覧の際に、自分のlikeと他ユーザーのlikeの共通個数を数え、多い順に並び替えたものが表示される仕様にするところも苦労しました。
+
+# 今後実装していきたい
+- ジャンルごとに人気のlikeをランキングでだす
+- ジャンルの細分化
+- ユーザーの登録likeをもとにおすすめlikeを表示させる
+- なぜ好きなのかというコメントの登録、表示
+- 気になるリストの作成
+- ユーザーのマイブーム機能の追加
 
 
 # DB設計
