@@ -52,7 +52,7 @@
       display: flex;
       flex-wrap: wrap;
       &__user{
-        width: 150px;
+        width: 200px;
         background-color: rgba(219, 76, 207, 0.562);
         border-radius: 20px;
         margin: 0 10px 10px 0;
@@ -72,6 +72,7 @@
             border-radius: 15px;
           }
           &__name{
+            width: 100%;
             text-align: center;
             line-height: 30px;
             color: rgba(0, 0, 0, 0.692);
