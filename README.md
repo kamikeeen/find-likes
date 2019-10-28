@@ -17,7 +17,7 @@ What you like in common and what you don't register is likely to be your favorit
 # DB設計
 
 ## ER図
-[![Image from Gyazo](https://i.gyazo.com/3d4a077a268e8297ff182c8fbf29a580.png)](https://gyazo.com/3d4a077a268e8297ff182c8fbf29a580)
+[![Image from Gyazo](https://i.gyazo.com/006f2544da29c26796b16b6d1c8264da.png)](https://gyazo.com/006f2544da29c26796b16b6d1c8264da)
 
 ## Usersテーブル
 
