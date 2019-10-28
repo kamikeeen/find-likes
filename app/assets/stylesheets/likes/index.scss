@@ -1,7 +1,7 @@
 .top-page{
+  padding: 200px 0 0 100px;
   &__title{
     @include fadein;
-    margin: 200px 0 0 100px;
     font-size: 24px;
     color: rgb(249, 113, 253);
   }
