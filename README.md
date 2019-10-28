@@ -1,4 +1,19 @@
 
+# Name
+Find-Likes
+
+# Description
+It is possible to find their new favorite.
+(まだ知らないあなたの好きなことを見つけることができます。)
+
+First, users register their favorite things.
+Then, find a user with a common point.
+What you like in common and what you don't register is likely to be your favorite
+
+(ユーザーは自分の好きなことを登録します。すると、好きなことが同じユーザーが見つかります。
+共通項が多いユーザーが登録している好きなことで、自分がまだ登録していないことは、あなたの好きなことになる可能性が高いものです。)
+
+
 # DB設計
 
 ## ER図
@@ -13,7 +28,7 @@
 |password|string|null: false|
 |image|string|null: false|
 
-### Association
+### Associationv
 - has_many :likes, through: :user_likes
 - has_many :user_likes
 - has_many :relationships
