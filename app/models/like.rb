@@ -7,7 +7,8 @@ class Like < ApplicationRecord
 
   validates :name,  presence: true,
                     length: { maximum: 40 }
-　validates :genre_id,  presence: true
+
+  validates :genre,  presence: true
 
   def sorted_same_likes_users(current_user)
     user_like_ids = current_user.likes.ids
