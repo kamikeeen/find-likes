@@ -6,5 +6,6 @@
       %br
       %input#search__like__box{placeholder: "映画・漫画のタイトルなど"}
       = f.text_field :name, class: "name", type: "hidden"
-
+    = render partial: 'shared/error-message', locals: {model: @like, column: "genre_id"}
+    
 = javascript_pack_tag "like_new"

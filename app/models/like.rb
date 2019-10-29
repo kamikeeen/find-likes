@@ -6,9 +6,8 @@ class Like < ApplicationRecord
   has_many :users, through: :user_likes
 
   validates :name,  presence: true,
-                    uniqueness: {scope: :genre_id, message: "すでに登録されています"} 
-  validates :genre_id, presence: true
-
+                    length: { maximum: 40 }
+　validates :genre_id,  presence: true
 
   def sorted_same_likes_users(current_user)
     user_like_ids = current_user.likes.ids
@@ -19,4 +18,5 @@ class Like < ApplicationRecord
     end
     same_likes = same_likes.sort{|(k1, v1), (k2, v2)| v2 <=> v1 }
   end
+
 end
