@@ -1,27 +1,71 @@
 .top-page{
-  padding: 200px 0 0 100px;
-  &__title{
-    @include fadein;
-    font-size: 24px;
-    color: rgb(249, 113, 253);
+  display: flex;
+  justify-content: space-between;
+  &__main{
+    margin: 200px 0 0 200px;
+    &__title{
+      @include fadein;
+      animation-duration: 3s;
+      font-size: 24px;
+      color: rgb(249, 113, 253);
+    }
+    &__btn{
+      display: block;
+      height: 30px;
+      line-height: 30px;
+      width: 150px;
+      border-radius: 4px;
+      text-decoration: none;
+      background-color: rgb(219, 76, 207);
+      color: white;
+      margin: 20px 0 0 50px;
+      box-shadow: 3px 3px 3px gray;
+      @include fadein;
+      animation-duration: 2s;
+      animation-delay: 3s;
+      animation-fill-mode: backwards;
+      &:active{
+        box-shadow: none;
+        transform: translate3d(2px, 2px, 2px);
+      }
+    }
   }
-  &__btn{
-    display: block;
-    height: 30px;
-    line-height: 30px;
-    width: 150px;
-    border-radius: 4px;
-    text-decoration: none;
-    background-color: rgb(219, 76, 207);
-    color: white;
-    margin: 20px 0 0 150px;
-    box-shadow: 3px 3px 3px gray;
-    @include fadein;
+  &__rankings{
+    margin: 80px 200px 0 0;
+    width: 400px;
+    height: 500px;
+    animation: abc;
+    animation-duration: 2s;
     animation-delay: 3s;
     animation-fill-mode: backwards;
-    &:active{
-      box-shadow: none;
-      transform: translate3d(2px, 2px, 2px);
+    &__ranking{
+      margin-bottom: 30px;
+      .like__title{
+        color: rgb(249, 113, 253);
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      .like__index{
+        display: flex;
+        flex-wrap: wrap;
+        .like{
+          padding: 0 10px;
+          background-color: rgba(219, 76, 207, 0.562);
+          height: 30px;
+          margin: 0 10px 10px 0;
+          border-radius: 4px;
+          box-shadow: 2px 2px 2px gray;
+          &:active{
+            transform: translate3d(1px, 1px, 1px);
+            box-shadow: none;
+          }
+          &__name{
+            color: black;
+            line-height: 30px;
+            text-decoration: none;
+          }
+        }
+      }
     }
   }
 }
