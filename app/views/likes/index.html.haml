@@ -4,8 +4,8 @@
       あなたの「好き」を見つけましょう
     = link_to "「好きを」登録する", new_like_path, class: "top-page__main__btn"
   .top-page__rankings
-    .top-page__rankings__ranking
-      - if @sort_genre_likes.count >= 5 && @sort_likes.count >= 5
+    - if @sort_genre_likes.count >= 5 && @sort_likes.count >= 5
+      .top-page__rankings__ranking
         .like__title
           Top5 Likes
         .like__index
