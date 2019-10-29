@@ -11,7 +11,6 @@ class LikesController < ApplicationController
 
   def create
     @like = Like.new(like_params)
-
     if @like.save
       @like.users << current_user
       redirect_to root_path
