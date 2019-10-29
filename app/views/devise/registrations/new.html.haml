@@ -1,30 +1,27 @@
 .devise
   %h2 Sign up
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = render "devise/shared/error_messages", resource: resource
     .field
       = f.label :nickname
-      %br/
-      = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
+      = f.text_field :nickname, autocomplete: "nickname", placeholder: "8文字以下"
+      = render partial: 'shared/error-message', locals: {model: @user, column: "nickname"}
     .field
       = f.label :avatar
-      %br/
-      = f.file_field :avatar, autocomplete: "avatar"
+      = f.file_field :avatar, autocomplete: "avatar", accept: ".jpeg, .png, .jpg"
+      = render partial: 'shared/error-message', locals: {model: @user, column: "avatar"}
     .field
       = f.label :email
-      %br/
       = f.email_field :email, autocomplete: "email"
+      = render partial: 'shared/error-message', locals: {model: @user, column: "email"}
     .field
       = f.label :password
-      - if @minimum_password_length
-        %em
-          (#{@minimum_password_length} characters minimum)
-      %br/
       = f.password_field :password, autocomplete: "new-password"
+      = render partial: 'shared/error-message', locals: {model: @user, column: "password"}
     .field
       = f.label :password_confirmation
-      %br/
       = f.password_field :password_confirmation, autocomplete: "new-password"
+      = render partial: 'shared/error-message', locals: {model: @user, column: "password_confirmation"}
+
     .actions
       = f.submit "Sign up"
   = render "devise/shared/links"
