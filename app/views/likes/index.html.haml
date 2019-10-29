@@ -5,16 +5,17 @@
     = link_to "「好きを」登録する", new_like_path, class: "top-page__main__btn"
   .top-page__rankings
     .top-page__rankings__ranking
-      .like__title
-        Top5 Likes
-      .like__index
-        - @sort_likes5.each do |like|
-          .like{ class: "#{'yet' unless current_user.likes.include?(like)}"}
-            = link_to "#{like.name}", like_path(like), class: "like__name"
-    .top-page__rankings__ranking
-      .like__title
-        = "#{@genre.name}の人気Like"
-      .like__index
-        - @sort_genre_likes5.each do |like|
-          .like{ class: "#{'yet' unless current_user.likes.include?(like)}"}
-            = link_to "#{like.name}", like_path(like), class: "like__name"
+      - if @sort_genre_likes.count >= 5 && @sort_likes.count >= 5
+        .like__title
+          Top5 Likes
+        .like__index
+          - @sort_likes5.each do |like|
+            .like{ class: "#{'yet' unless current_user.likes.include?(like)}"}
+              = link_to "#{like.name}", like_path(like), class: "like__name"
+      .top-page__rankings__ranking
+        .like__title
+          = "#{@genre.name}の人気Like"
+        .like__index
+          - @sort_genre_likes5.each do |like|
+            .like{ class: "#{'yet' unless current_user.likes.include?(like)}"}
+              = link_to "#{like.name}", like_path(like), class: "like__name"
