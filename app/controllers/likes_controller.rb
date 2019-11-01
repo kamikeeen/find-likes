@@ -43,17 +43,6 @@ class LikesController < ApplicationController
     @users = User.search_sort_with_ids(user_ids)
   end
 
-  def add
-    unless current_user.likes.include?(@like)
-      @like.users << current_user
-      redirect_to like_path(@like)
-    else
-      @user_like = UserLike.find_by(user_id: current_user.id, like_id: @like.id)
-      UserLike.destroy(@user_like.id)
-      redirect_to like_path(@like)
-    end
-  end
-
   private
 
   def set_like

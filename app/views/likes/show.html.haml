@@ -6,11 +6,11 @@
       .like__info__genre
         = "ジャンル: #{@like.genre.name}"
     .like__follow
-      .like__follow__btn{class: "#{'yet' unless current_user.likes.include?(@like)}"}
-        - if current_user.likes.ids.include?(@like.id)
-          = link_to "好きから外す", add_like_path(params[:id])
+      .like__follow__btn{class: "#{'yet' unless current_user.likes.include?(@like)}", data: @like.id}
+        - if current_user.likes.include?(@like)
+          好きから外す
         - else
-          = link_to "好きに追加する", add_like_path(params[:id])
+          好きに追加する
       .like__follow__num
         = "登録ユーザー: #{@like.users.length}人"
   .followers
@@ -25,3 +25,5 @@
               = "#{user.nickname}"
               - if user != current_user
                 = "(#{count})"
+
+= javascript_pack_tag "like_show"
