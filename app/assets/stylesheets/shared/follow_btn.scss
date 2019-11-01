@@ -1,17 +1,15 @@
 .follow-btn{
   font-size: 16px;
-  display: block;
   height: 30px;
   line-height: 30px;
   width: 100px;
   border-radius: 4px;
-  text-decoration: none;
   background-color: rgb(219, 76, 207);
   border-style: none;
   color: white;
   margin: 5px 0 0 20px;
   box-shadow: 2px 2px 2px gray;
-  outline: none;
+  text-align: center;
   &:active{
     box-shadow: none;
     transform: translate3d(1px, 1px, 1px);
