@@ -6,7 +6,7 @@
       .like__info__genre
         = "ジャンル: #{@like.genre.name}"
     .like__follow
-      .like__follow__btn{class: "#{'yet' unless current_user.likes.include?(@like)}", data: @like.id}
+      .like__follow__btn{class: "#{liked?(current_user, @like)}", data: @like.id}
         - if current_user.likes.include?(@like)
           好きから外す
         - else
@@ -18,7 +18,7 @@
       登録ユーザー（like共通数）
     .followers__users
       - @users.zip(@same_like_counts).each do |user, count|
-        .followers__users__user{class: "#{'yet' unless current_user.followings.include?(user)}"}
+        .followers__users__user{class: "#{followed?(current_user, user)}"}
           = link_to user_path(user.id), class: "link" do
             = image_tag "#{user.avatar}", class: "link__avatar"
             .link__name

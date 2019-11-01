@@ -18,4 +18,3 @@
         - @genre_likes_ranking5.each do |like|
           .like{ class: "#{liked?(current_user, like)}"}
             = link_to "#{like.name}", like_path(like), class: "like__name"
-

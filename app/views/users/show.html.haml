@@ -35,4 +35,5 @@
             .like{ class: "#{liked?(current_user, like)}"}
               = link_to "#{like.name}", like_path(like), class: "like__name"
 
+= javascript_pack_tag "user_show"
 

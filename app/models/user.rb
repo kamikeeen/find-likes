@@ -1,8 +1,6 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  devise  :database_authenticatable, :registerable,
+          :recoverable, :rememberable, :validatable
   mount_uploader :avatar, ImageUploader
 
   has_many :user_likes
@@ -32,17 +30,6 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true
 
   scope :search_sort_with_ids, ->(ids) { where(id: ids).order(['field(id, ?)', ids]) }
-
-  def follow(other_user)
-    if self != other_user
-      self.relationships.find_or_create_by(follow_id: other_user.id)
-    end
-  end
-
-  def unfollow(other_user)
-    relationship = self.relationships.find_by(follow_id: other_user.id)
-    relationship.destroy if relationship
-  end
 
   def following?(other_user)
     self.followings.include?(other_user)

@@ -1,15 +1,15 @@
 $(function(){
-  let btn = $(".like__follow__btn") 
+  let btn = $(".follow-btn") 
   let id = btn.attr('data')
-  let ary = [{  url: "/api/users/add_like",
+  let ary = [{  url: "/api/users/follow",
                 type: "get",
                 params: { id: id },
-                text: "好きから外す"
+                text: "フォロー中"
               },
-              { url: "/api/users/delete_like",
+              { url: "/api/users/unfollow",
                 type: "get",
                 params: { id: id },
-                text: "好きに追加する"
+                text: "フォロー"
               }
             ]
   btn.on("click", function(){

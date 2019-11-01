@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   namespace :api do
     get "likes/search"
     get "likes/select_genre"
-    post "users/add_like"
-    delete "users/delete_like"
+    get "users/add_like"
+    get "users/delete_like"
+    get "users/follow"
+    get "users/unfollow"
   end
 end
