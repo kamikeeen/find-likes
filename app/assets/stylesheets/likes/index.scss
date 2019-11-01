@@ -1,6 +1,10 @@
 .top-page{
   display: flex;
   justify-content: space-between;
+  height: calc(100vh - 70px);
+  // background-image: image-url("child-3194977_1280.jpg");
+  // background-repeat: no-repeat;
+  // background-size: cover;
   &__main{
     margin: 200px 0 0 200px;
     &__title{
