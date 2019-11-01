@@ -10,7 +10,7 @@
             = "フォロー  (#{@user.followings.length})"
           .followings__users
             - @user.followings.each do |following|
-              .followings__users__user{ class: "#{'yet' unless current_user.followings.include?(following)}"}
+              .followings__users__user{ class: "#{followed?(current_user, following)}"}
                 = link_to user_path(following.id), class: "link" do
                   = image_tag "#{following.avatar}", class: "link__avatar"
                   .link__name
@@ -20,7 +20,7 @@
             = "フォローワー  (#{@user.followers.length})"
           .followers__users
             - @user.followers.each do |follower|
-              .followers__users__user{ class: "#{'yet' unless current_user.followings.include?(follower)}"}
+              .followers__users__user{ class: "#{followed?(current_user, follower)}"}
                 = link_to user_path(follower.id), class: "link" do
                   = image_tag "#{follower.avatar}", class: "link__avatar"
                   .link__name
@@ -32,7 +32,7 @@
             ="(共通: #{@count}個)"
         .like__index
           - @user.likes.each do |like|
-            .like{ class: "#{'yet' unless current_user.likes.include?(like)}"}
+            .like{ class: "#{liked?(current_user, like)}"}
               = link_to "#{like.name}", like_path(like), class: "like__name"
 
 

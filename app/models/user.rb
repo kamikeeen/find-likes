@@ -31,6 +31,7 @@ class User < ApplicationRecord
 
   validates :password_confirmation, presence: true
 
+  scope :search_sort_with_ids, ->(ids) { where(id: ids).order(['field(id, ?)', ids]) }
 
   def follow(other_user)
     if self != other_user

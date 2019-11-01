@@ -10,6 +10,8 @@ class Like < ApplicationRecord
 
   validates :genre,  presence: true
 
+  scope :search_sort_with_ids, ->(ids) { where(id: ids).order(['field(id, ?)', ids]) }
+
   def sorted_same_likes_users(current_user)
     user_like_ids = current_user.likes.ids
     same_likes = {}
@@ -19,5 +21,6 @@ class Like < ApplicationRecord
     end
     same_likes = same_likes.sort{|(k1, v1), (k2, v2)| v2 <=> v1 }
   end
+
 
 end
