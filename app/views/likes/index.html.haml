@@ -4,18 +4,18 @@
       あなたの「好き」を見つけましょう
     = link_to "「好きを」登録する", new_like_path, class: "top-page__main__btn"
   .top-page__rankings
-    - if @sort_genre_likes.count >= 5 && @sort_likes.count >= 5
-      .top-page__rankings__ranking
-        .like__title
-          Top5 Likes
-        .like__index
-          - @sort_likes5.each do |like|
-            .like{ class: "#{'yet' unless current_user.likes.include?(like)}"}
-              = link_to "#{like.name}", like_path(like), class: "like__name"
-      .top-page__rankings__ranking
-        .like__title
-          = "#{@genre.name}の人気Like"
-        .like__index
-          - @sort_genre_likes5.each do |like|
-            .like{ class: "#{'yet' unless current_user.likes.include?(like)}"}
-              = link_to "#{like.name}", like_path(like), class: "like__name"
+    .top-page__rankings__ranking
+      .like__title
+        Top5 Likes
+      .like__index
+        - @likes_ranking5.each do |like|
+          .like{ class: "#{liked?(current_user, like)}"}
+            = link_to "#{like.name}", like_path(like), class: "like__name"
+    .top-page__rankings__ranking
+      .like__title
+        = "#{@genre.name}の人気Like"
+      .like__index
+        - @genre_likes_ranking5.each do |like|
+          .like{ class: "#{liked?(current_user, like)}"}
+            = link_to "#{like.name}", like_path(like), class: "like__name"
+
