@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_28_052251) do
+ActiveRecord::Schema.define(version: 2019_11_02_035749) do
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "name"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_10_28_052251) do
     t.bigint "like_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "reason"
     t.index ["like_id"], name: "index_user_likes_on_like_id"
     t.index ["user_id", "like_id"], name: "index_user_likes_on_user_id_and_like_id", unique: true
     t.index ["user_id"], name: "index_user_likes_on_user_id"
