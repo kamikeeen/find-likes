@@ -48,7 +48,7 @@ Find-Likes
 - ユーザー一覧の際に、自分のlikeと他ユーザーのlikeの共通個数を数え、多い順に並び替えたものが表示される仕様にするところも苦労しました。
 
 # 今後実装していきたい
-- ジャンルごとに人気のlikeをランキングでだす
+~~ジャンルごとに人気のlikeをランキングでだす~~
 - ジャンルの細分化
 - ユーザーの登録likeをもとにおすすめlikeを表示させる
 - なぜ好きなのかというコメントの登録、表示
@@ -60,7 +60,7 @@ Find-Likes
 # DB設計
 
 ## ER図
-[![Image from Gyazo](https://i.gyazo.com/006f2544da29c26796b16b6d1c8264da.png)](https://gyazo.com/006f2544da29c26796b16b6d1c8264da)
+[![Image from Gyazo](https://i.gyazo.com/4fe24ae07b6bc2924e17f390531ee0e2.png)](https://gyazo.com/4fe24ae07b6bc2924e17f390531ee0e2)
 
 ## Usersテーブル
 
@@ -109,6 +109,7 @@ Find-Likes
 |------|----|-------|
 |user_id|reference|null: false, foreign_key: true|
 |like_id|reference|null: false, foreign_key: true|
+|reason|text||
 
 ### Association
 - belongs_to :user
